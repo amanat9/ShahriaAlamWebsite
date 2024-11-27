@@ -1,0 +1,16 @@
+analysis_BCStepCode|TEDI_compliance,archetype|Archetype-ACH,archetype|Weather-Locale,configuration|RunNumber,cost-estimates|byAttribute|Opt-ACH,cost-estimates|byAttribute|Opt-Windows,cost-estimates|byBuildingComponent|envelope,cost-estimates|total,input|House-ListOfUpgrades,input|Opt-ACH,input|Opt-Location,input|Opt-Windows,input|Run-Locale,output|Util-Bill-Elec,output|Util-Bill-Gas,output|Util-Bill-gross
+Step 2,1.5,HALIFAX,1,2042.02,0,2042.02,2042.02,Opt-ACH=>New-Const-air_seal_to_1.50_ach;,New-Const-air_seal_to_1.50_ach,HALIFAX,NA,HALIFAX,1065.79,373,1438.79
+Step 2,1,HALIFAX,2,2842.02,0,2842.02,2842.02,Opt-ACH=>New-Const-air_seal_to_1.00_ach;,New-Const-air_seal_to_1.00_ach,HALIFAX,NA,HALIFAX,1065.04,360.77,1425.81
+Step 2,0.6,HALIFAX,3,4442.02,0,4442.02,4442.02,Opt-ACH=>New-Const-air_seal_to_0.60_ach;,New-Const-air_seal_to_0.60_ach,HALIFAX,NA,HALIFAX,1064.52,352.23,1416.75
+Step 1,1.5,HALIFAX,4,2042.02,9583.73,11625.75,11625.75,Opt-ACH=>New-Const-air_seal_to_1.50_ach;Opt-Windows=>NC-2g-LG-u1.65;,New-Const-air_seal_to_1.50_ach,HALIFAX,NC-2g-LG-u1.65,HALIFAX,1069.32,431.64,1500.95
+Step 2,1.5,HALIFAX,5,2042.02,10249.73,12291.75,12291.75,Opt-ACH=>New-Const-air_seal_to_1.50_ach;Opt-Windows=>NC-2g-HG-u1.65;,New-Const-air_seal_to_1.50_ach,HALIFAX,NC-2g-HG-u1.65,HALIFAX,1065.24,364.65,1429.89
+Step 3,1.5,GREENWOOD,6,2042.02,0,2042.02,2042.02,Opt-ACH=>New-Const-air_seal_to_1.50_ach;,New-Const-air_seal_to_1.50_ach,GREENWOOD,NA,GREENWOOD,1049.78,348.59,1398.37
+Step 3,1,GREENWOOD,7,2842.02,0,2842.02,2842.02,Opt-ACH=>New-Const-air_seal_to_1.00_ach;,New-Const-air_seal_to_1.00_ach,GREENWOOD,NA,GREENWOOD,1049.09,337.42,1386.51
+Step 3,0.6,GREENWOOD,8,4442.02,0,4442.02,4442.02,Opt-ACH=>New-Const-air_seal_to_0.60_ach;,New-Const-air_seal_to_0.60_ach,GREENWOOD,NA,GREENWOOD,1048.61,329.67,1378.28
+Step 1,1.5,GREENWOOD,9,2042.02,9583.73,11625.75,11625.75,Opt-ACH=>New-Const-air_seal_to_1.50_ach;Opt-Windows=>NC-2g-LG-u1.65;,New-Const-air_seal_to_1.50_ach,GREENWOOD,NC-2g-LG-u1.65,GREENWOOD,1052.94,402.5,1455.44
+Step 3,1.5,GREENWOOD,10,2042.02,10249.73,12291.75,12291.75,Opt-ACH=>New-Const-air_seal_to_1.50_ach;Opt-Windows=>NC-2g-HG-u1.65;,New-Const-air_seal_to_1.50_ach,GREENWOOD,NC-2g-HG-u1.65,GREENWOOD,1049.22,339.88,1389.1
+Step 1,1.5,YARMOUTH,11,2042.02,0,2042.02,2042.02,Opt-ACH=>New-Const-air_seal_to_1.50_ach;,New-Const-air_seal_to_1.50_ach,YARMOUTH,NA,YARMOUTH,1056.32,336.55,1392.87
+Step 2,1,YARMOUTH,12,2842.02,0,2842.02,2842.02,Opt-ACH=>New-Const-air_seal_to_1.00_ach;,New-Const-air_seal_to_1.00_ach,YARMOUTH,NA,YARMOUTH,1055.63,325.41,1381.04
+Step 2,0.6,YARMOUTH,13,4442.02,0,4442.02,4442.02,Opt-ACH=>New-Const-air_seal_to_0.60_ach;,New-Const-air_seal_to_0.60_ach,YARMOUTH,NA,YARMOUTH,1055.15,317.68,1372.83
+Step 1,1.5,YARMOUTH,14,2042.02,9583.73,11625.75,11625.75,Opt-ACH=>New-Const-air_seal_to_1.50_ach;Opt-Windows=>NC-2g-LG-u1.65;,New-Const-air_seal_to_1.50_ach,YARMOUTH,NC-2g-LG-u1.65,YARMOUTH,1059.89,394.4,1454.3
+Step 1,1.5,YARMOUTH,15,2042.02,10249.73,12291.75,12291.75,Opt-ACH=>New-Const-air_seal_to_1.50_ach;Opt-Windows=>NC-2g-HG-u1.65;,New-Const-air_seal_to_1.50_ach,YARMOUTH,NC-2g-HG-u1.65,YARMOUTH,1055.77,327.88,1383.66
