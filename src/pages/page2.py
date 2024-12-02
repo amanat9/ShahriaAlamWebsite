@@ -176,7 +176,12 @@ layout = dbc.Container([
         dcc.Graph(id='savings-graph')
     ], style={'display': 'none'})  # Initially hidden
 
-], fluid=True)
+
+
+   
+
+
+], fluid=True, style={'margin-bottom': '100px'})
 
 # Callback to update images based on house type
 @callback(

@@ -18,6 +18,6 @@ layout = dbc.Container([
     ], className='mb-3'),
 
     dbc.Row([
-        dbc.Col(dcc.Link('Proceed to Component Selection', href='/recommendations', className='btn btn-primary')),
+        dbc.Col(dcc.Link('Proceed to Component Selection', href='/combined', className='btn btn-primary')),
     ], className='mb-3')
 ])
