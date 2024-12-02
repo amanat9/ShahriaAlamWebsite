@@ -6,16 +6,12 @@ import dash_bootstrap_components as dbc
 app = Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SUPERHERO])
 server = app.server
 
-# Header for navigation between pages
+# Header without navigation links
 header = dbc.Navbar(
     dbc.Container(
         [
             dbc.NavbarBrand("Energy Cost Estimator"),
-            dbc.Nav([
-                dbc.NavLink(page["name"], href=page["path"])
-                for page in dash.page_registry.values()
-                if not page["path"].startswith("/app")
-            ])
+            # Navigation links have been removed
         ],
         fluid=True,
     ),

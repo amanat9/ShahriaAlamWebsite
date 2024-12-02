@@ -173,15 +173,16 @@ layout = dbc.Container([
         html.H2(children='Recommended Upgrades'),
         html.Div(id='recommended-upgrades', children='Loading recommended upgrades...'),
 
-        dcc.Graph(id='savings-graph')
-    ], style={'display': 'none'})  # Initially hidden
+        dcc.Graph(
+            id='savings-graph',
+            style={'height': '500px'}  # Removed 'width' to allow dynamic adjustment
+        )
+    ], style={'display': 'none'}),  # Initially hidden
 
+    # Empty Div to add space at the end
+    html.Div(style={'height': '50px'})
 
-
-   
-
-
-], fluid=True, style={'margin-bottom': '100px'})
+], fluid=True)
 
 # Callback to update images based on house type
 @callback(
@@ -402,11 +403,13 @@ def find_best_upgrades(df, user_selections, selected_component=None):
     Output('output-container', 'children'),
     Output('recommended-upgrades', 'children'),
     Output('savings-graph', 'figure'),
+    Output('savings-graph', 'style'),
     Input('optimize-all-button', 'n_clicks'),
     State('windows-dropdown', 'value'),
     State('foundationwall-dropdown', 'value'),
     State('heatingcooling-dropdown', 'value'),
-    State('data-store', 'data')
+    State('data-store', 'data'),
+    prevent_initial_call=True
 )
 def optimize_all(n_clicks, windows, foundationwall, heatingcooling, data_json):
     if n_clicks > 0 and data_json:
@@ -451,10 +454,15 @@ def optimize_all(n_clicks, windows, foundationwall, heatingcooling, data_json):
 
         savings_layout = go.Layout(
             title='Savings by Component Upgrade',
-            barmode='group'
+            barmode='group',
+            height=500,
+            margin=dict(l=50, r=50, t=50, b=50)
         )
 
         figure = go.Figure(data=savings_data, layout=savings_layout)
+
+        # Set the graph style to full width
+        graph_style = {'height': '500px', 'width': '100%'}
 
         current_df = df[
             (df['input|Opt-Windows'] == user_selections['input|Opt-Windows']) &
@@ -467,16 +475,18 @@ def optimize_all(n_clicks, windows, foundationwall, heatingcooling, data_json):
         return (
             f"Total Cost: {total_cost:.2f} CAD",
             html.Div(recommended_text_elements),
-            figure
+            figure,
+            graph_style
         )
 
-    return 'Select options and click "Optimize All" to see results', 'Loading recommended upgrades...', {}
+    return 'Select options and click "Optimize All" to see results', 'Loading recommended upgrades...', {}, {}
 
-# Callback for the 'Optimize Selected' button (Placeholder functionality)
+# Callback for the 'Optimize Selected' button
 @callback(
     Output('output-container', 'children', allow_duplicate=True),
     Output('recommended-upgrades', 'children', allow_duplicate=True),
     Output('savings-graph', 'figure', allow_duplicate=True),
+    Output('savings-graph', 'style', allow_duplicate=True),
     Input('optimize-selected-button', 'n_clicks'),
     State('component-radio', 'value'),
     State('windows-dropdown', 'value'),
@@ -534,12 +544,19 @@ def optimize_selected(n_clicks, selected_component, windows, foundationwall, hea
             )
         ]
 
+        # Adjust the figure layout to control the graph size
         savings_layout = go.Layout(
             title='Savings by Component Upgrade',
-            barmode='group'
+            barmode='group',
+            height=500,
+            width=600,  # Adjusted width for optimize_selected
+            margin=dict(l=50, r=50, t=50, b=50)
         )
 
         figure = go.Figure(data=savings_data, layout=savings_layout)
+
+        # Set the graph style to a smaller width
+        graph_style = {'height': '500px', 'width': '600px'}
 
         current_df = df[
             (df['input|Opt-Windows'] == user_selections['input|Opt-Windows']) &
@@ -552,7 +569,8 @@ def optimize_selected(n_clicks, selected_component, windows, foundationwall, hea
         return (
             f"Total Cost: {total_cost:.2f} CAD",
             html.Div(recommended_text_elements),
-            figure
+            figure,
+            graph_style
         )
 
-    return dash.no_update, dash.no_update, dash.no_update
+    return dash.no_update, dash.no_update, dash.no_update, dash.no_update
